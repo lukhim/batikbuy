@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
-    <title>Login Akun</title>
+    <title>Register Akun</title>
   </head>
   <body>
 
@@ -14,8 +14,13 @@
         <div class="col-md-5 offset-md-3">
           <div class="card">
             <div class="card-body">
-              <label>LOGIN</label>
+              <label>REGISTER</label>
               <hr>
+                
+                <div class="form-group">
+                  <label>Nama Lengkap</label>
+                  <input type="text" class="form-control" id="nama_lengkap" placeholder="Masukkan Nama Lengkap">
+                </div>
 
                 <div class="form-group">
                   <label>Username</label>
@@ -27,13 +32,13 @@
                   <input type="password" class="form-control" id="password" placeholder="Masukkan Password">
                 </div>
                 
-                <button class="btn btn-login btn-block btn-success">LOGIN</button>
+                <button class="btn btn-register btn-block btn-success">REGISTER</button>
               
             </div>
           </div>
 
           <div class="text-center" style="margin-top: 15px">
-            Belum punya akun? <a href="<?php echo base_url() ?>index.php/register">Silahkan Register</a>
+            Sudah punya akun? <a href="<?php echo base_url() ?>index.php/login">Silahkan Login</a>
           </div>
 
         </div>
@@ -47,12 +52,21 @@
     <script>
       $(document).ready(function() {
 
-        $(".btn-login").click( function() {
+        $(".btn-register").click( function() {
         
+          var nama_lengkap = $("#nama_lengkap").val();
           var username = $("#username").val();
           var password = $("#password").val();
 
-          if(username.length == "") {
+          if (nama_lengkap.length == "") {
+
+            Swal.fire({
+              type: 'warning',
+              title: 'Oops...',
+              text: 'Nama Lengkap Wajib Diisi !'
+            });
+
+          } else if(username.length == "") {
 
             Swal.fire({
               type: 'warning',
@@ -70,11 +84,13 @@
 
           } else {
 
+            //ajax
             $.ajax({
 
-              url: "<?php echo base_url() ?>index.php/login/cek_login",
+              url: "<?php echo base_url() ?>index.php/register/simpan",
               type: "POST",
               data: {
+                  "nama_lengkap": nama_lengkap,
                   "username": username,
                   "password": password
               },
@@ -85,24 +101,21 @@
 
                   Swal.fire({
                     type: 'success',
-                    title: 'Login Berhasil!',
-                    text: 'Anda akan di arahkan dalam 3 Detik',
-                    timer: 3000,
-                    showCancelButton: false,
-                    showConfirmButton: false
-                  })
-                  .then (function() {
-                    window.location.href = "<?php echo base_url() ?>index.php/dashboard";
+                    title: 'Register Berhasil!',
+                    text: 'silahkan login!'
                   });
+
+                  $("#nama_lengkap").val('');
+                  $("#username").val('');
+                  $("#password").val('');
 
                 } else {
 
                   Swal.fire({
                     type: 'error',
-                    title: 'Login Gagal!',
+                    title: 'Register Gagal!',
                     text: 'silahkan coba lagi!'
                   });
-
 
                 }
 
@@ -111,18 +124,14 @@
               },
 
               error:function(response){
-
                   Swal.fire({
                     type: 'error',
                     title: 'Opps!',
                     text: 'server error!'
                   });
-
-                  console.log(response);
-
               }
 
-            });
+            })
 
           }
 
