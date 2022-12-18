@@ -14,9 +14,13 @@ class Admin extends CI_Controller
         $data['judul'] = 'Dashboard';
         $data['user'] = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
         $data['anggota'] = $this->ModelUser->getUserLimit()->result_array();
-        $data['buku'] = $this->ModelProduk->getProduk()->result_array();
+        $data['produk'] = $this->ModelProduk->getProduk()->result_array();
 
-        $this->load->view('dashboard', $data);
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('admin/index', $data);
+        $this->load->view('templates/footer');
     }
 
 }

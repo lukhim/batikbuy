@@ -155,150 +155,180 @@
     </nav>
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Dashboard</h1>
-        <div class="btn-toolbar mb-2 mb-md-0">
-          <div class="btn-group me-2">
-            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+      <!-- Begin Page Content -->
+<div class="container-fluid">
+
+<!-- row ux-->
+<div class="row">
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-danger shadow h-100 py-2 bg-primary">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-md font-weight-bold text-white text-uppercase mb-1">Jumlah Anggota</div>
+            <div class="h1 mb-0 font-weight-bold text-white"><?= $this->ModelUser->getUserWhere(['role_id' => 1])->num_rows(); ?></div>
           </div>
-          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-            <span data-feather="calendar" class="align-text-bottom"></span>
-            This week
-          </button>
+          <div class="col-auto">
+            <a href="<?= base_url('user/anggota'); ?>"><i class="fas fa-users fa-3x text-warning"></i></a>
+          </div>
         </div>
       </div>
+    </div>
+  </div>
 
-      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
-
-      <h2>Section title</h2>
-      <div class="table-responsive">
-        <table class="table table-striped table-sm">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Header</th>
-              <th scope="col">Header</th>
-              <th scope="col">Header</th>
-              <th scope="col">Header</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1,001</td>
-              <td>random</td>
-              <td>data</td>
-              <td>placeholder</td>
-              <td>text</td>
-            </tr>
-            <tr>
-              <td>1,002</td>
-              <td>placeholder</td>
-              <td>irrelevant</td>
-              <td>visual</td>
-              <td>layout</td>
-            </tr>
-            <tr>
-              <td>1,003</td>
-              <td>data</td>
-              <td>rich</td>
-              <td>dashboard</td>
-              <td>tabular</td>
-            </tr>
-            <tr>
-              <td>1,003</td>
-              <td>information</td>
-              <td>placeholder</td>
-              <td>illustrative</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,004</td>
-              <td>text</td>
-              <td>random</td>
-              <td>layout</td>
-              <td>dashboard</td>
-            </tr>
-            <tr>
-              <td>1,005</td>
-              <td>dashboard</td>
-              <td>irrelevant</td>
-              <td>text</td>
-              <td>placeholder</td>
-            </tr>
-            <tr>
-              <td>1,006</td>
-              <td>dashboard</td>
-              <td>illustrative</td>
-              <td>rich</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,007</td>
-              <td>placeholder</td>
-              <td>tabular</td>
-              <td>information</td>
-              <td>irrelevant</td>
-            </tr>
-            <tr>
-              <td>1,008</td>
-              <td>random</td>
-              <td>data</td>
-              <td>placeholder</td>
-              <td>text</td>
-            </tr>
-            <tr>
-              <td>1,009</td>
-              <td>placeholder</td>
-              <td>irrelevant</td>
-              <td>visual</td>
-              <td>layout</td>
-            </tr>
-            <tr>
-              <td>1,010</td>
-              <td>data</td>
-              <td>rich</td>
-              <td>dashboard</td>
-              <td>tabular</td>
-            </tr>
-            <tr>
-              <td>1,011</td>
-              <td>information</td>
-              <td>placeholder</td>
-              <td>illustrative</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,012</td>
-              <td>text</td>
-              <td>placeholder</td>
-              <td>layout</td>
-              <td>dashboard</td>
-            </tr>
-            <tr>
-              <td>1,013</td>
-              <td>dashboard</td>
-              <td>irrelevant</td>
-              <td>text</td>
-              <td>visual</td>
-            </tr>
-            <tr>
-              <td>1,014</td>
-              <td>dashboard</td>
-              <td>illustrative</td>
-              <td>rich</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,015</td>
-              <td>random</td>
-              <td>tabular</td>
-              <td>information</td>
-              <td>text</td>
-            </tr>
-          </tbody>
-        </table>
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-primary shadow h-100 py-2 bg-warning">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-md font-weight-bold text-white text-uppercase mb-1">Stok Buku Terdaftar</div>
+            <div class="h1 mb-0 font-weight-bold text-white">
+              <?php
+              $where = ['stok != 0'];
+              $totalstok = $this->ModelBuku->total('stok', $where);
+              echo $totalstok;
+              ?>
+            </div>
+          </div>
+          <div class="col-auto">
+            <a href="<?= base_url('buku'); ?>"><i class="fas fa-book fa-3x text-primary"></i></a>
+          </div>
+        </div>
       </div>
+    </div>
+  </div>
+
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-success shadow h-100 py-2 bg-danger">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-md font-weight-bold text-white text-uppercase mb-1">Buku yang dipinjam</div>
+            <div class="h1 mb-0 font-weight-bold text-white">
+              <?php
+              $where = ['dipinjam != 0'];
+              $totaldipinjam = $this->ModelBuku->total('dipinjam', $where);
+              echo $totaldipinjam;
+              ?>
+            </div>
+          </div>
+          <div class="col-auto">
+            <a href="<?= base_url('user'); ?>"><i class="fas fa-user-tag fa-3x text-success"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-warning shadow h-100 py-2 bg-success">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-md font-weight-bold text-white text-uppercase mb-1">Buku yang dibooking</div>
+            <div class="h1 mb-0 font-weight-bold text-white">
+              <?php
+              $where = ['dibooking !=0'];
+              $totaldibooking = $this->ModelBuku->total('dibooking', $where);
+              echo $totaldibooking;
+              ?>
+            </div>
+          </div>
+          <div class="col-auto">
+            <a href="<?= base_url('user'); ?>"><i class="fas fa-shopping-cart fa-3x text-danger"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end row ux-->
+
+<!-- Divider -->
+<hr class="sidebar-divider">
+
+<!-- row table-->
+<div class="row">
+  <div class="table-responsive table-bordered col-sm-5 ml-auto mr-auto mt-2">
+    <div class="page-header">
+      <span class="fas fa-users text-primary mt-2 "> Data User</span>
+      <a class="text-danger" href="<?php echo base_url('user/data_user'); ?>"><i class="fas fa-search mt-2 float-right"> Tampilkan</i></a>
+    </div>
+    <table class="table mt-3">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nama Anggota</th>
+          <th>Email</th>
+          <th>Role ID</th>
+          <th>Aktif</th>
+          <th>Member Sejak</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+        $i = 1;
+        foreach ($anggota as $a) { ?>
+          <tr>
+            <td><?= $i++; ?></td>
+            <td><?= $a['nama']; ?></td>
+            <td><?= $a['email']; ?></td>
+            <td><?= $a['role_id']; ?></td>
+            <td><?= $a['is_active']; ?></td>
+            <td><?= date('Y', $a['tanggal_input']); ?></td>
+          </tr>
+        <?php } ?>
+      </tbody>
+    </table>
+  </div>
+
+
+  <div class="table-responsive table-bordered col-sm-5 ml-auto mr-auto mt-2">
+    <div class="page-header">
+      <span class="fas fa-book text-warning mt-2"> Data Buku</span>
+      <a href="<?= base_url('buku'); ?>"><i class="fas fa-search text-primary mt-2 float-right"> Tampilkan</i></a>
+    </div>
+    <div class="table-responsive">
+      <table class="table mt-3" id="table-datatable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Judul Buku</th>
+            <th>Pengarang</th>
+            <th>Penerbit</th>
+            <th>Tahun Terbit</th>
+            <th>ISBN</th>
+            <th>Stok</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+          $i = 1;
+          foreach ($buku as $b) { ?>
+            <tr>
+              <td><?= $i++; ?></td>
+              <td><?= $b['judul_buku']; ?></td>
+              <td><?= $b['pengarang']; ?></td>
+              <td><?= $b['penerbit']; ?></td>
+              <td><?= $b['tahun_terbit']; ?></td>
+              <td><?= $b['isbn']; ?></td>
+              <td><?= $b['stok']; ?></td>
+            </tr>
+          <?php } ?>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+</div>
+<!-- end of row table-->
+
+</div>
+<!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->
     </main>
   </div>
 </div>

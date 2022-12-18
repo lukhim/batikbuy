@@ -55,8 +55,8 @@ class Produk extends CI_Controller
 
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/header', $data);
-            $this->load->view('templates/sidebar', $data);
             $this->load->view('templates/topbar', $data);
+            $this->load->view('templates/sidebar', $data);
             $this->load->view('produk/index', $data);
             $this->load->view('templates/footer');
         } else {
@@ -138,8 +138,8 @@ class Produk extends CI_Controller
 
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/header', $data);
-            $this->load->view('templates/sidebar', $data);
             $this->load->view('templates/topbar', $data);
+            $this->load->view('templates/sidebar', $data);
             $this->load->view('produk/ubah_produk', $data);
             $this->load->view('templates/footer');
         } else {
