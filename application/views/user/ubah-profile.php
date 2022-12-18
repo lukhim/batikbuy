@@ -1,5 +1,5 @@
 <!-- Begin Page Content -->
-<div class="container-fluid">
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 
     <div class="row">
         <div class="col-lg-9">
@@ -45,8 +45,5 @@
         </div>
     </div>
 
-</div>
 <!-- /.container-fluid -->
-
-</div>
 <!-- End of Main Content -->

@@ -69,24 +69,16 @@
   </head>
   <body>
 <!-- awal dari top nav -->
-<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">BatikBuy</a>
-  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <!-- <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search"> -->
-  <div class="navbar-nav">
-    <div class="nav-item text">
-      <a class="nav-link px-3" href="<?php echo base_url().'user'; ?>">Profile saya</a>
-      <!-- <a class="nav-link px-3" href="<?php echo base_url().'autentifikasi/logout'; ?>">Sign out</a> -->
-    </div>
-  </div>
-  <div class="navbar-nav">
-    <div class="nav-item text">
-      <!-- <a class="nav-link px-3" href="<?php echo base_url().'user'; ?>">Profile saya</a> -->
-      <a class="nav-link px-3" href="<?php echo base_url().'autentifikasi/logout'; ?>">Sign out</a>
-    </div>
-  </div>
+<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+  <a href="<?php echo base_url().'admin'; ?>" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+    <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+    <span class="fs-4">BatikBuy</span>
+  </a>
+
+  <ul class="nav nav-pills">
+    <li class="nav-item"><a href="<?php echo base_url().'user'; ?>" class="nav-link">Profile saya</a></li>
+    <li class="nav-item"><a href="<?php echo base_url().'autentifikasi/logout'; ?>" class="nav-link">Sign Out</a></li>
+  </ul>
 </header>
 
 <!-- awal dari sidebar  -->
@@ -96,30 +88,24 @@
       <div class="position-sticky pt-3 sidebar-sticky">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
+            <a class="nav-link active" aria-current="page" href="<?php echo base_url().'admin'; ?>">
               <span data-feather="home" class="align-text-bottom"></span>
               Dashboard
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="file" class="align-text-bottom"></span>
-              Orders
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="<?php echo base_url().'produk'; ?>">
               <span data-feather="shopping-cart" class="align-text-bottom"></span>
               Products
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="<?php echo base_url().'user'; ?>">
               <span data-feather="users" class="align-text-bottom"></span>
-              Customers
+              User
             </a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="#">
               <span data-feather="bar-chart-2" class="align-text-bottom"></span>
               Reports
@@ -130,10 +116,10 @@
               <span data-feather="layers" class="align-text-bottom"></span>
               Integrations
             </a>
-          </li>
+          </li> -->
         </ul>
 
-        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
+        <!-- <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
           <span>Saved reports</span>
           <a class="link-secondary" href="#" aria-label="Add a new report">
             <span data-feather="plus-circle" class="align-text-bottom"></span>
@@ -164,7 +150,7 @@
               Year-end sale
             </a>
           </li>
-        </ul>
+        </ul> -->
       </div>
     </nav>
 

@@ -92,7 +92,7 @@
       </label>
     </div> -->
     <div class="text-center mb-3">
-      Belum punya akun? <a class="small" href="<?= base_url(); ?>autentifikasi/registrasi'); ?>">Daftar Member!</a>
+      Belum punya akun? <a class="small" href="<?= base_url("autentifikasi/registrasi")?>">Daftar Member!</a>
     </div>
     <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
     <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
