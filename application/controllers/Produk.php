@@ -95,7 +95,7 @@ class Produk extends CI_Controller
     {
         $data['judul'] = 'Ubah Data Produk';
         $data['user'] = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
-        $data['produk'] = $this->ModelProduk->produkWhere(['kd_batik' => $this->uri->segment(3)])->result_array();
+        $data['produk'] = $this->ModelProduk->produkWhere(['id' => $this->uri->segment(3)])->result_array();
         
 
         $this->form_validation->set_rules('nama_batik', 'Nama Batik', 'required|min_length[3]', [
@@ -129,8 +129,8 @@ class Produk extends CI_Controller
         $config['upload_path'] = './assets/img/upload/';
         $config['allowed_types'] = 'jpg|png|jpeg';
         $config['max_size'] = '3000';
-        $config['max_width'] = '1024';
-        $config['max_height'] = '1000';
+        $config['max_width'] = '3000';
+        $config['max_height'] = '3000';
         $config['file_name'] = 'img' . time();
 
         //memuat atau memanggil library upload
@@ -163,7 +163,7 @@ class Produk extends CI_Controller
                 'image' => $gambar
             ];
 
-            $this->ModelProduk->updateProduk($data, ['kd_batik' => $this->input->post('kd_batik')]);
+            $this->ModelProduk->updateProduk($data, ['id' => $this->input->post('id')]);
             redirect('produk');
         }
     }

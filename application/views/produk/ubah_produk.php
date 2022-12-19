@@ -13,19 +13,28 @@
                 <form action="<?= base_url('produk/ubahProduk'); ?>" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <input type="hidden" name="id" id="id" value="<?php echo $b['id']; ?>">
-                        <input type="text" class="form-control form-control-user" id="judul_buku" name="judul_buku" placeholder="Masukkan Judul Buku" value="<?= $b['nama_batik']; ?>">
+                        <input type="text" class="form-control form-control-user" id="nama_batik" name="nama_batik" placeholder="#" value="<?= $b['nama_batik']; ?>">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control form-control-user" id="pengarang" name="pengarang" placeholder="Masukkan nama pengarang" value="<?= $b['motif']; ?>">
+                        <input type="text" class="form-control form-control-user" id="motif" name="motif" placeholder="#" value="<?= $b['motif']; ?>">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control form-control-user" id="penerbit" name="penerbit" placeholder="Masukkan nama penerbit" value="<?= $b['asal_daerah']; ?>">
+                        <input type="text" class="form-control form-control-user" id="asal_daerah" name="asal_daerah" placeholder="#" value="<?= $b['asal_daerah']; ?>">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control form-control-user" id="isbn" name="isbn" placeholder="Masukkan ISBN" value="<?= $b['size']; ?>">
+                        <input type="text" class="form-control form-control-user" id="bahan" name="bahan" placeholder="#" value="<?= $b['bahan']; ?>">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control form-control-user" id="stok" name="stok" placeholder="Masukkan nominal stok" value="<?= $b['harga']; ?>">
+                        <input type="text" class="form-control form-control-user" id="size" name="size" placeholder="#" value="<?= $b['size']; ?>">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-user" id="harga" name="harga" placeholder="#" value="<?= $b['harga']; ?>">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-user" id="stok" name="stok" placeholder="#" value="<?= $b['stok']; ?>">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-user" id="gender" name="gender" placeholder="#" value="<?= $b['gender']; ?>">
                     </div>
                     <div class="form-group">
                         <?php

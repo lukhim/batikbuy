@@ -53,7 +53,6 @@
                     <th scope="col">Stok</th>
                     <th scope="col">Gender</th>
                     <th scope="col">Gambar</th>
-                    <th scope="col">Pilihan</th>
                 </tr>
             </thead>
             <tbody>
@@ -75,10 +74,6 @@
                         <source srcset="" type="image/svg+xml">
                         <img src="<?= base_url('assets/img/upload/') . $b['image'];?>" class="img-fluid img-thumbnail" alt="...">
                     </picture></td>
-                <td>
-                    <a href="<?= base_url('produk/ubahProduk/').$b['id'];?>">Ubah</a>
-                    <a href="<?= base_url('produk/hapusProduk/').$b['id'];?>" onclick="return confirm('Kamu yakin akan menghapus ?')"> Hapus</a>
-                </td>
             </tr>
             <?php } ?>
             </tbody>
