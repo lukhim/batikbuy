@@ -36,7 +36,7 @@
 
     <div class="table-responsive table-bordered col-sm-5 ml-auto mr-auto mt-2">
       <div class="page-header">
-        <span class="fas fa-book text-warning mt-2"> Data Buku</span>
+        <span class="fas fa-book text-warning mt-2"> Data Produk</span>
         <!-- <a href="<?= base_url('buku'); ?>"><i class="fas fa-search text-primary mt-2 float-right"> Tampilkan</i></a> -->
       </div>
       <div class="table-responsive">
