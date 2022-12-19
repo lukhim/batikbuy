@@ -71,7 +71,6 @@
 <main class="form-signin w-100 m-auto">
   <?= $this->session->flashdata('pesan'); ?>
   <form class="user" method="POST" action="<?= base_url('autentifikasi/registrasi'); ?>">
-    <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
     <h4 class="h3 mb-3 fw-bold">BatikBuy</h4>
     <h1 class="h3 mb-3 fw-normal">Sign Up</h1>
 
