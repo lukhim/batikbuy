@@ -9,6 +9,6 @@
       - /bin/cp/ readme.txt $DEPLOYPATH
       - /bin/cp/ composser.jason $DEPLOYPAT
       - /bin/cp/ .gitignore $DEPLOYPATH
-      - /bin/cp -R application DEPLOYPATH
+      - /bin/cp/ -R application DEPLOYPATH
       - /bin/cp/ -R assets $DEPLOYPATH
       - /bin/cp/ -R system $DEPLOYPATH
