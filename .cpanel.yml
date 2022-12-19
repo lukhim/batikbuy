@@ -1,14 +1,5 @@
 ---
-  deployment:
-    tasks:
-      - export DEPLOYPATH=/home/batikbuy/public_html/
-      - /bin/cp/ index.php $DEPLOYPATH
-      - /bin/cp/ .editorconfig $DEPLOYPATH
-      - /bin/cp/ .htaccess $DEPLOYPATH
-      - /bin/cp/ license.php $DEPLOYPATH
-      - /bin/cp/ readme.txt $DEPLOYPATH
-      - /bin/cp/ composser.jason $DEPLOYPAT
-      - /bin/cp/ .gitignore $DEPLOYPATH
-      - /bin/cp/ -R application DEPLOYPATH
-      - /bin/cp/ -R assets $DEPLOYPATH
-      - /bin/cp/ -R system $DEPLOYPATH
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/example/public_html/
+    - /bin/cp -R images $DEPLOYPATH
